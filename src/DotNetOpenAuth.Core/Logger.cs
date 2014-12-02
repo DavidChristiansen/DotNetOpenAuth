@@ -6,13 +6,11 @@
 
 namespace DotNetOpenAuth {
 	using System;
-	using System.Diagnostics.Contracts;
 	using System.Globalization;
 	using DotNetOpenAuth.Loggers;
-	using DotNetOpenAuth.Messaging;
-	using log4net.Core;
+	using TinyIoC;
 
-	/// <summary>
+    /// <summary>
 	/// A general logger for the entire DotNetOpenAuth library.
 	/// </summary>
 	/// <remarks>
@@ -177,8 +175,17 @@ namespace DotNetOpenAuth {
 		/// <param name="name">The name of the log to initialize.</param>
 		/// <returns>The <see cref="ILog"/> instance of the logger to use.</returns>
 		private static ILog InitializeFacade(string name) {
-			ILog result = Log4NetLogger.Initialize(name) ?? TraceLogger.Initialize(name) ?? NoOpLogger.Initialize();
+            var container = TinyIoCContainer.Current;
+
+            container.Register<ILog, NoOpLogger>("NoOp"); // NoOp Logger
+            container.Register<ILog, TraceLogger>("Trace"); // Trace logger
+
+            ILog result = container.Resolve<ILog>(Configuration.DotNetOpenAuthSection.Logging.Logger);
+		    if (result != null) {
+		        result.Initialize(name);
+		    }
 			return result;
 		}
 	}
+
 }

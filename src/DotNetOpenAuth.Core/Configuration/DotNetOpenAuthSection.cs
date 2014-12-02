@@ -45,12 +45,19 @@ namespace DotNetOpenAuth.Configuration {
 			get { return MessagingElement.Configuration; }
 		}
 
-		/// <summary>
-		/// Gets the reporting configuration element.
-		/// </summary>
-		internal static ReportingElement Reporting {
-			get { return ReportingElement.Configuration; }
-		}
+        /// <summary>
+        /// Gets the reporting configuration element.
+        /// </summary>
+        internal static ReportingElement Reporting {
+            get { return ReportingElement.Configuration; }
+        }
+
+        /// <summary>
+        /// Gets the logging configuration element.
+        /// </summary>
+        internal static LoggingElement Logging {
+            get { return LoggingElement.Configuration; }
+        }
 
 		/// <summary>
 		/// Gets a named section in this section group, or <c>null</c> if no such section is defined.

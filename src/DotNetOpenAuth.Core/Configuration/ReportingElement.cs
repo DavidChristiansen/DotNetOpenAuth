@@ -12,10 +12,7 @@ namespace DotNetOpenAuth.Configuration {
 	using System.Linq;
 	using System.Text;
 
-	/// <summary>
-	/// Represents the &lt;reporting&gt; element in the host's .config file.
-	/// </summary>
-	internal class ReportingElement : ConfigurationSection {
+    internal class ReportingElement : ConfigurationSection {
 		/// <summary>
 		/// The name of the @enabled attribute.
 		/// </summary>

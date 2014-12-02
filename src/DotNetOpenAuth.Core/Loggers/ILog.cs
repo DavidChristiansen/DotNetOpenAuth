@@ -27,8 +27,6 @@ namespace DotNetOpenAuth.Loggers
 {
 	using System;
 	using System.Reflection;
-	using log4net;
-	using log4net.Core;
 
 	/// <summary>
 	/// The ILog interface is use by application to log messages into
@@ -69,7 +67,7 @@ namespace DotNetOpenAuth.Loggers
 	/// <seealso cref="LogManager.GetLogger(Assembly, Type)"/>
 	/// <author>Nicko Cadell</author>
 	/// <author>Gert Driesen</author>
-	interface ILog
+	public interface ILog
 	{
 		/// <overloads>Log a message object with the <see cref="Level.Debug"/> level.</overloads>
 		/// <summary>
@@ -847,5 +845,12 @@ namespace DotNetOpenAuth.Loggers
 		/// <seealso cref="Fatal(object)"/>
 		/// <seealso cref="ILog.IsDebugEnabled"/>
 		bool IsFatalEnabled { get; }
+
+	    /// <summary>
+	    /// Returns a new logger that uses the <see cref="System.Diagnostics.Trace"/> class 
+	    /// if sufficient CAS permissions are granted to use it, otherwise returns false.
+	    /// </summary>
+	    /// <returns>The created <see cref="ILog"/> instance.</returns>
+	    void Initialize(string name);
 	}
 }

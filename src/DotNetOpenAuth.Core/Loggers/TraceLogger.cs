@@ -350,7 +350,7 @@ namespace DotNetOpenAuth.Loggers {
 		/// if sufficient CAS permissions are granted to use it, otherwise returns false.
 		/// </summary>
 		/// <returns>The created <see cref="ILog"/> instance.</returns>
-		internal static ILog Initialize(string name) {
+		public static ILog Initialize(string name) {
 			return IsSufficientPermissionGranted ? new TraceLogger(name) : null;
 		}
 	}
