@@ -16,6 +16,7 @@ namespace DotNetOpenAuth.OAuth2 {
 	using System.Web.Security;
 
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OAuth2.Messages;
 

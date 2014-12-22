@@ -5,7 +5,9 @@
 //-----------------------------------------------------------------------
 
 namespace DotNetOpenAuth.Test.OAuth {
-	/// <summary>
+    using DotNetOpenAuth.OAuth;
+
+    /// <summary>
 	/// Information necessary to initialize a <see cref="Consumer"/>,
 	/// and to tell a <see cref="ServiceProvider"/> about it.
 	/// </summary>

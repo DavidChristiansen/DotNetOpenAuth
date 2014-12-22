@@ -11,8 +11,9 @@ namespace DotNetOpenAuth.OpenId.RelyingParty {
 	using System.Diagnostics.Contracts;
 	using System.Web.UI;
 	using DotNetOpenAuth.InfoCard;
+	using DotNetOpenAuth.Loggers;
 
-	/// <summary>
+    /// <summary>
 	/// A button that appears in the <see cref="OpenIdSelector"/> control that
 	/// activates the Information Card selector on the browser, if one is available.
 	/// </summary>

@@ -11,6 +11,8 @@ namespace DotNetOpenAuth.OpenId.ChannelElements {
 	using System.Linq;
 	using System.Text;
 	using System.Web;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.Messaging.Reflection;

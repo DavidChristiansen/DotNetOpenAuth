@@ -13,7 +13,9 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Net;
 	using System.Text;
 
-	/// <summary>
+	using DotNetOpenAuth.Loggers;
+
+    /// <summary>
 	/// Cached details on the response from a direct web request to a remote party.
 	/// </summary>
 	[ContractVerification(true)]

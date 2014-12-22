@@ -23,6 +23,7 @@ namespace DotNetOpenAuth.OpenId.RelyingParty {
 	using System.Web.UI;
 	using DotNetOpenAuth.ComponentModel;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId.Extensions;
 	using DotNetOpenAuth.OpenId.Extensions.UI;

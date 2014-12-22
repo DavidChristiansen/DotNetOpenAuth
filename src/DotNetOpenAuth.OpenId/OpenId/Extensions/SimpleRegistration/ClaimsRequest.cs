@@ -12,6 +12,8 @@ namespace DotNetOpenAuth.OpenId.Extensions.SimpleRegistration {
 	using System.Diagnostics.Contracts;
 	using System.Globalization;
 	using System.Text;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId.Messages;
 

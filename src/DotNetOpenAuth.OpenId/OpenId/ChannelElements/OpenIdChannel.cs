@@ -14,6 +14,8 @@ namespace DotNetOpenAuth.OpenId.ChannelElements {
 	using System.Linq;
 	using System.Net;
 	using System.Text;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.OpenId.Extensions;
@@ -205,7 +207,7 @@ namespace DotNetOpenAuth.OpenId.ChannelElements {
 
 			// Filter the responses to the allowable set of HTTP status codes.
 			if (response.Status != HttpStatusCode.OK && response.Status != HttpStatusCode.BadRequest) {
-				if (Logger.Channel.IsErrorEnabled) {
+				if (Logger.Channel.IsErrorEnabled()) {
 					using (var reader = new StreamReader(response.ResponseStream)) {
 						Logger.Channel.ErrorFormat(
 							"Unexpected HTTP status code {0} {1} received in direct response:{2}{3}",

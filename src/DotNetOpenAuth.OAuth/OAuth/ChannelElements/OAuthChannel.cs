@@ -17,6 +17,8 @@ namespace DotNetOpenAuth.OAuth.ChannelElements {
 	using System.Net.Mime;
 	using System.Text;
 	using System.Web;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.Messaging.Reflection;

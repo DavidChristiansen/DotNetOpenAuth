@@ -16,6 +16,8 @@ namespace DotNetOpenAuth.OpenId {
 	using System.Text.RegularExpressions;
 	using System.Web.UI.HtmlControls;
 	using System.Xml;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Xrds;
 	using DotNetOpenAuth.Yadis;

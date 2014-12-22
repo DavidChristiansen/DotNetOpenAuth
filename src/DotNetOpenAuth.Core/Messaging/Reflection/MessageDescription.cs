@@ -13,7 +13,9 @@ namespace DotNetOpenAuth.Messaging.Reflection {
 	using System.Linq;
 	using System.Reflection;
 
-	/// <summary>
+	using DotNetOpenAuth.Loggers;
+
+    /// <summary>
 	/// A mapping between serialized key names and <see cref="MessagePart"/> instances describing
 	/// those key/values pairs.
 	/// </summary>

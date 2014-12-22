@@ -12,7 +12,9 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Globalization;
 	using System.Web;
 
-	/// <summary>
+	using DotNetOpenAuth.Loggers;
+
+    /// <summary>
 	/// A collection of error checking and reporting methods.
 	/// </summary>
 	[ContractVerification(true)]
@@ -204,7 +206,7 @@ namespace DotNetOpenAuth.Messaging {
 			Contract.Assume(unformattedMessage != null);
 			if (!condition) {
 				var exception = new ProtocolException(string.Format(CultureInfo.CurrentCulture, unformattedMessage, args));
-				if (Logger.Messaging.IsErrorEnabled) {
+				if (Logger.Messaging.IsErrorEnabled()) {
 					Logger.Messaging.Error(
 						string.Format(
 						CultureInfo.CurrentCulture,

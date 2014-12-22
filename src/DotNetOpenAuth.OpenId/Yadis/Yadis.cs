@@ -13,6 +13,7 @@ namespace DotNetOpenAuth.Yadis {
 	using System.Web.UI.HtmlControls;
 	using System.Xml;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId;
 	using DotNetOpenAuth.Xrds;
@@ -160,7 +161,7 @@ namespace DotNetOpenAuth.Yadis {
 					if (response != null && response.IsFromCache) {
 						// We don't want to report error responses from the cache, since the server may have fixed
 						// whatever was causing the problem.  So try again with cache disabled.
-						Logger.Messaging.Error("An HTTP error response was obtained from the cache.  Retrying with cache disabled.", ex);
+						Logger.Messaging.ErrorException("An HTTP error response was obtained from the cache.  Retrying with cache disabled.", ex);
 						var nonCachingRequest = request.Clone();
 						nonCachingRequest.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.Reload);
 						return requestHandler.GetResponse(nonCachingRequest, options);

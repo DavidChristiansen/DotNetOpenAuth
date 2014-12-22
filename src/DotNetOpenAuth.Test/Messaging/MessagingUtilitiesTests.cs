@@ -65,7 +65,7 @@ namespace DotNetOpenAuth.Test.Messaging {
 		public void AppendQueryArgsNullDictionary() {
 			MessagingUtilities.AppendQueryArgs(new UriBuilder(), null);
 		}
-
+#if CLR4
 		[Test]
 		public void AsHttpResponseMessage() {
 			var responseContent = new byte[10];
@@ -100,7 +100,7 @@ namespace DotNetOpenAuth.Test.Messaging {
 			Assert.That(httpResponseMessage.Headers.GetValues("X-SOME-HEADER").ToList(), Is.EqualTo(new[] { "value" }));
 			Assert.That(httpResponseMessage.Content, Is.Null);
 		}
-
+#endif
 		[Test]
 		public void ToDictionary() {
 			NameValueCollection nvc = new NameValueCollection();

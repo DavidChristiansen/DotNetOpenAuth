@@ -23,9 +23,11 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Threading;
 	using System.Web;
 	using System.Xml;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging.Reflection;
 
-	/// <summary>
+    /// <summary>
 	/// Manages sending direct messages to a remote party and receiving responses.
 	/// </summary>
 	[SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Unavoidable.")]
@@ -477,7 +479,7 @@ namespace DotNetOpenAuth.Messaging {
 		public IDirectedProtocolMessage ReadFromRequest(HttpRequestBase httpRequest) {
 			Requires.NotNull(httpRequest, "httpRequest");
 
-			if (Logger.Channel.IsInfoEnabled && httpRequest.GetPublicFacingUrl() != null) {
+			if (Logger.Channel.IsInfoEnabled() && httpRequest.GetPublicFacingUrl() != null) {
 				Logger.Channel.InfoFormat("Scanning incoming request for messages: {0}", httpRequest.GetPublicFacingUrl().AbsoluteUri);
 			}
 			IDirectedProtocolMessage requestMessage = this.ReadFromRequestCore(httpRequest);
@@ -1061,7 +1063,7 @@ namespace DotNetOpenAuth.Messaging {
 			this.EnsureValidMessageParts(message);
 			message.EnsureValidMessage();
 
-			if (Logger.Channel.IsInfoEnabled) {
+			if (Logger.Channel.IsInfoEnabled()) {
 				var directedMessage = message as IDirectedProtocolMessage;
 				string recipient = (directedMessage != null && directedMessage.Recipient != null) ? directedMessage.Recipient.AbsoluteUri : "<response>";
 				var messageAccessor = this.MessageDescriptions.GetAccessor(message);
@@ -1242,7 +1244,7 @@ namespace DotNetOpenAuth.Messaging {
 		protected virtual void ProcessIncomingMessage(IProtocolMessage message) {
 			Requires.NotNull(message, "message");
 
-			if (Logger.Channel.IsInfoEnabled) {
+			if (Logger.Channel.IsInfoEnabled()) {
 				var messageAccessor = this.MessageDescriptions.GetAccessor(message, true);
 				Logger.Channel.InfoFormat(
 					"Processing incoming {0} ({1}) message:{2}{3}",
@@ -1288,7 +1290,7 @@ namespace DotNetOpenAuth.Messaging {
 				eventedMessage.OnReceiving();
 			}
 
-			if (Logger.Channel.IsDebugEnabled) {
+			if (Logger.Channel.IsDebugEnabled()) {
 				var messageAccessor = this.MessageDescriptions.GetAccessor(message);
 				Logger.Channel.DebugFormat(
 					"After binding element processing, the received {0} ({1}) message is: {2}{3}",

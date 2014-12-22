@@ -10,6 +10,8 @@ namespace DotNetOpenAuth.OpenId.Messages {
 	using System.Diagnostics.Contracts;
 	using System.Linq;
 	using System.Text;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId.Provider;
 

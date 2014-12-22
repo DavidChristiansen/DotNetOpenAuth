@@ -19,6 +19,7 @@ namespace DotNetOpenAuth.OpenId.RelyingParty {
 	using System.Text;
 	using System.Web;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.OpenId.ChannelElements;

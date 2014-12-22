@@ -11,6 +11,8 @@ namespace DotNetOpenAuth.OpenId.Provider {
 	using System.Linq;
 	using System.Net;
 	using System.Text;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId.Messages;
 

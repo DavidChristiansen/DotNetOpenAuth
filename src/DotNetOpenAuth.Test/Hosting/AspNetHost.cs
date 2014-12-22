@@ -11,6 +11,8 @@ namespace DotNetOpenAuth.Test.Hosting {
 	using System.Threading;
 	using System.Web;
 	using System.Web.Hosting;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Test.OpenId;
 
@@ -60,7 +62,7 @@ namespace DotNetOpenAuth.Test.Hosting {
 					HttpRuntime.ProcessRequest(new TestingWorkerRequest(context, tw));
 				}
 			} catch (Exception ex) {
-				Logger.Http.Error("Exception in AspNetHost", ex);
+				Logger.Http.ErrorException("Exception in AspNetHost", ex);
 				throw;
 			}
 		}

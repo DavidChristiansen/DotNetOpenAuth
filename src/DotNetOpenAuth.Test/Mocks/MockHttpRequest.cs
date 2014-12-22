@@ -13,6 +13,8 @@ namespace DotNetOpenAuth.Test.Mocks {
 	using System.Net;
 	using System.Text;
 	using System.Web;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId;
 	using DotNetOpenAuth.OpenId.RelyingParty;

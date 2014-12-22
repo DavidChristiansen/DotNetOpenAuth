@@ -12,9 +12,10 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Net;
 	using System.Net.Sockets;
 	using System.Reflection;
-	using DotNetOpenAuth.Messaging;
 
-	/// <summary>
+	using DotNetOpenAuth.Loggers;
+
+    /// <summary>
 	/// The default handler for transmitting <see cref="HttpWebRequest"/> instances
 	/// and returning the responses.
 	/// </summary>
@@ -159,7 +160,7 @@ namespace DotNetOpenAuth.Messaging {
 						response.StatusCode,
 						response.StatusDescription);
 
-					if (Logger.Http.IsDebugEnabled) {
+					if (Logger.Http.IsDebugEnabled()) {
 						using (var reader = new StreamReader(ex.Response.GetResponseStream())) {
 							Logger.Http.DebugFormat(
 								"WebException from {0}: {1}{2}", ex.Response.ResponseUri, Environment.NewLine, reader.ReadToEnd());

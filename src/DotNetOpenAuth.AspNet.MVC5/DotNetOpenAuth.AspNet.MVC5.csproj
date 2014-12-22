@@ -7,13 +7,17 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>DotNetOpenAuth.AspNet.MVC5</RootNamespace>
   </PropertyGroup>
   <Import Project="$(ProjectRoot)tools\DotNetOpenAuth.props" />
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{502C05E6-DBDF-4115-89B9-16EBAEEA3CDE}</ProjectGuid>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>DotNetOpenAuth.Mvc5</AssemblyName>
+    <AssemblyName>DotNetOpenAuth.AspNet.MVC5</AssemblyName>
     <DNOASetEnvVar>false</DNOASetEnvVar>
   </PropertyGroup>
   <Import Project="$(ProjectRoot)tools\DotNetOpenAuth.Product.props" />

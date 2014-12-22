@@ -22,8 +22,9 @@ namespace DotNetOpenAuth.OpenId.RelyingParty {
 	using DotNetOpenAuth.InfoCard;
 	////using DotNetOpenAuth.InfoCard;
 	using DotNetOpenAuth.Messaging;
+	using DotNetOpenAuth.OpenId.Extensions.AttributeExchange;
 
-	/// <summary>
+    /// <summary>
 	/// An ASP.NET control that provides a user-friendly way of logging into a web site using OpenID.
 	/// </summary>
 	[ToolboxData("<{0}:OpenIdInfoCardSelector runat=\"server\"></{0}:OpenIdInfoCardSelector>")]

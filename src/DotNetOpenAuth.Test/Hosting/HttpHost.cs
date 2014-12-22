@@ -11,7 +11,9 @@ namespace DotNetOpenAuth.Test.Hosting {
 	using System.Net;
 	using System.Threading;
 
-	internal class HttpHost : IDisposable {
+	using DotNetOpenAuth.Loggers;
+
+    internal class HttpHost : IDisposable {
 		private readonly HttpListener listener;
 		private Thread listenerThread;
 		private AspNetHost aspNetHost;
@@ -71,7 +73,7 @@ namespace DotNetOpenAuth.Test.Hosting {
 					}
 				}
 			} catch (WebException ex) {
-				Logger.Http.Error("Exception in HttpHost", ex);
+				Logger.Http.ErrorException("Exception in HttpHost", ex);
 				using (StreamReader sr = new StreamReader(ex.Response.GetResponseStream())) {
 					string streamContent = sr.ReadToEnd();
 					Logger.Http.ErrorFormat("Error content stream follows: {0}", streamContent);

@@ -9,6 +9,8 @@ namespace DotNetOpenAuth.OAuth.ChannelElements {
 	using System.Collections.Generic;
 	using System.Linq;
 	using System.Text;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 
 	/// <summary>
@@ -46,7 +48,7 @@ namespace DotNetOpenAuth.OAuth.ChannelElements {
 					oauthMessage.HttpMethod = MessagingUtilities.GetHttpVerb(transmissionMethod);
 					return MessageProtections.None;
 				} catch (ArgumentException ex) {
-					Logger.OAuth.Error("Unrecognized HttpDeliveryMethods value.", ex);
+					Logger.OAuth.ErrorException("Unrecognized HttpDeliveryMethods value.", ex);
 					return null;
 				}
 			} else {

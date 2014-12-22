@@ -9,6 +9,7 @@ namespace DotNetOpenAuth.OpenId.Provider {
 	using System.Diagnostics.Contracts;
 	using System.Threading;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 
@@ -72,7 +73,7 @@ namespace DotNetOpenAuth.OpenId.Provider {
 			try {
 				formatter.Deserialize(bag, handle, containingMessage, Protocol.Default.openid.assoc_handle);
 			} catch (ProtocolException ex) {
-				Logger.OpenId.Error("Rejecting an association because deserialization of the encoded handle failed.", ex);
+				Logger.OpenId.ErrorException("Rejecting an association because deserialization of the encoded handle failed.", ex);
 				return null;
 			}
 

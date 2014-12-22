@@ -15,6 +15,7 @@ namespace DotNetOpenAuth.OAuth {
 	using System.Net.Http;
 #endif
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.OAuth.ChannelElements;

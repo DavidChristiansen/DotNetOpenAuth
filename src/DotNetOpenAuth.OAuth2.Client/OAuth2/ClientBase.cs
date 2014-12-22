@@ -18,6 +18,7 @@ namespace DotNetOpenAuth.OAuth2 {
 	using System.Text;
 	using System.Xml;
 
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OAuth2.ChannelElements;
 	using DotNetOpenAuth.OAuth2.Messages;

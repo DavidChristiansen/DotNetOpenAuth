@@ -16,6 +16,7 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Net.Cache;
 	using System.Text.RegularExpressions;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 
 	/// <summary>

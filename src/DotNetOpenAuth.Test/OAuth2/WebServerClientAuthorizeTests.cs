@@ -128,7 +128,7 @@ namespace DotNetOpenAuth.Test.OAuth2 {
 				});
 			coordinator.Run();
 		}
-
+#if CLR4
 		[Test]
 		public void CreateAuthorizingHandlerBearer() {
 			var client = new WebServerClient(AuthorizationServerDescription);
@@ -136,7 +136,7 @@ namespace DotNetOpenAuth.Test.OAuth2 {
 			var tcs = new TaskCompletionSource<HttpResponseMessage>();
 			var expectedResponse = new HttpResponseMessage();
 
-			var mockHandler = new Mocks.MockHttpMessageHandler((req, ct) => {
+			var mockHandler = new DotNetOpenAuth.Test.Mocks.MockHttpMessageHandler((req, ct) => {
 				Assert.That(req.Headers.Authorization.Scheme, Is.EqualTo(Protocol.BearerHttpAuthorizationScheme));
 				Assert.That(req.Headers.Authorization.Parameter, Is.EqualTo(bearerToken));
 				tcs.SetResult(expectedResponse);
@@ -157,7 +157,7 @@ namespace DotNetOpenAuth.Test.OAuth2 {
 			var tcs = new TaskCompletionSource<HttpResponseMessage>();
 			var expectedResponse = new HttpResponseMessage();
 
-			var mockHandler = new Mocks.MockHttpMessageHandler((req, ct) => {
+            var mockHandler = new Test.Mocks.MockHttpMessageHandler((req, ct) => {
 				Assert.That(req.Headers.Authorization.Scheme, Is.EqualTo(Protocol.BearerHttpAuthorizationScheme));
 				Assert.That(req.Headers.Authorization.Parameter, Is.EqualTo(bearerToken));
 				tcs.SetResult(expectedResponse);
@@ -168,5 +168,6 @@ namespace DotNetOpenAuth.Test.OAuth2 {
 			var actualResponse = httpClient.GetAsync("http://localhost/someMessage").Result;
 			Assert.That(actualResponse, Is.SameAs(expectedResponse));
 		}
+#endif
 	}
 }

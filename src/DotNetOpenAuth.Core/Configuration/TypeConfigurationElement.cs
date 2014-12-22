@@ -19,7 +19,7 @@ namespace DotNetOpenAuth.Configuration {
 #endif
 	using DotNetOpenAuth.Messaging;
 
-	/// <summary>
+    /// <summary>
 	/// Represents an element in a .config file that allows the user to provide a @type attribute specifying
 	/// the full type that provides some service used by this library.
 	/// </summary>

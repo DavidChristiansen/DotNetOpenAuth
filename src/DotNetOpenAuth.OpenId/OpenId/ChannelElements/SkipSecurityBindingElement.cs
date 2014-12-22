@@ -10,6 +10,8 @@ namespace DotNetOpenAuth.OpenId.ChannelElements {
 	using System.Diagnostics;
 	using System.Linq;
 	using System.Text;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 
 	/// <summary>

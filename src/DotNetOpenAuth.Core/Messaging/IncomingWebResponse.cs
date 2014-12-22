@@ -14,7 +14,9 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Net.Mime;
 	using System.Text;
 
-	/// <summary>
+	using DotNetOpenAuth.Loggers;
+
+    /// <summary>
 	/// Details on the incoming response from a direct web request to a remote party.
 	/// </summary>
 	[ContractVerification(true)]

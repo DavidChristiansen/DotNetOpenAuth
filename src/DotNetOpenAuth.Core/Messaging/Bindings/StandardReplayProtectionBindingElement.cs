@@ -9,7 +9,9 @@ namespace DotNetOpenAuth.Messaging.Bindings {
 	using System.Diagnostics;
 	using System.Diagnostics.Contracts;
 
-	/// <summary>
+	using DotNetOpenAuth.Loggers;
+
+    /// <summary>
 	/// A binding element that checks/verifies a nonce message part.
 	/// </summary>
 	internal class StandardReplayProtectionBindingElement : IChannelBindingElement {

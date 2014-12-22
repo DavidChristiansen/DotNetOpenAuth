@@ -23,7 +23,7 @@
 	<files>
 		<file src="$OutputPath35$signed\$identity$.dll" target="lib\net35-full\" />
 		<file src="$OutputPath40$signed\$identity$.dll" target="lib\net40-full\" />
-		<file src="$OutputPath45$signed\$identity$.dll" target="lib\net45-full\" />
+		<file src="$OutputPath45$$signedSubPath$\$identity$.dll" target="lib\net45-full\" />
 		<file src="$OutputPath35$$identity$.pdb" target="lib\net35-full\" />
 		<file src="$OutputPath40$$identity$.pdb" target="lib\net40-full\" />
 		<file src="$OutputPath45$$identity$.pdb" target="lib\net45-full\" />
@@ -33,7 +33,7 @@
 
 		<file src="$OutputPath35$signed\Org.Mentalis.Security.Cryptography.dll" target="lib\net35-full\" />
 		<file src="$OutputPath40$signed\Org.Mentalis.Security.Cryptography.dll" target="lib\net40-full\" />
-		<file src="$OutputPath45$signed\Org.Mentalis.Security.Cryptography.dll" target="lib\net45-full\" />
+		<file src="$OutputPath45$$signedSubPath$\Org.Mentalis.Security.Cryptography.dll" target="lib\net45-full\" />
 		<file src="$OutputPath35$Org.Mentalis.Security.Cryptography.pdb" target="lib\net35-full\" />
 		<file src="$OutputPath40$Org.Mentalis.Security.Cryptography.pdb" target="lib\net40-full\" />
 		<file src="$OutputPath45$Org.Mentalis.Security.Cryptography.pdb" target="lib\net45-full\" />
@@ -43,7 +43,7 @@
 
 		<file src="$OutputPath35$signed\Mono.Math.dll" target="lib\net35-full\" />
 		<file src="$OutputPath40$signed\Mono.Math.dll" target="lib\net40-full\" />
-		<file src="$OutputPath45$signed\Mono.Math.dll" target="lib\net45-full\" />
+		<file src="$OutputPath45$$signedSubPath$\Mono.Math.dll" target="lib\net45-full\" />
 		<file src="$OutputPath35$Mono.Math.pdb" target="lib\net35-full\" />
 		<file src="$OutputPath40$Mono.Math.pdb" target="lib\net40-full\" />
 		<file src="$OutputPath45$Mono.Math.pdb" target="lib\net45-full\" />

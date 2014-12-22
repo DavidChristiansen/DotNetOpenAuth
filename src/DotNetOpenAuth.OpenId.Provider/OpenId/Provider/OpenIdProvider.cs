@@ -16,6 +16,7 @@ namespace DotNetOpenAuth.OpenId.Provider {
 	using System.Threading;
 	using System.Web;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.OpenId.ChannelElements;
@@ -525,7 +526,7 @@ namespace DotNetOpenAuth.OpenId.Provider {
 			Requires.NotNull(ex, "ex");
 			Requires.NotNull(httpRequestInfo, "httpRequestInfo");
 
-			Logger.OpenId.Error("An exception was generated while processing an incoming OpenID request.", ex);
+			Logger.OpenId.ErrorException("An exception was generated while processing an incoming OpenID request.", ex);
 			IErrorMessage errorMessage;
 
 			// We must create the appropriate error message type (direct vs. indirect)

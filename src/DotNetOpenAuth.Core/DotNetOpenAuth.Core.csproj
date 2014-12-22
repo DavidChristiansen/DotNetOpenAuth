@@ -5,6 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <Import Project="$(ProjectRoot)tools\DotNetOpenAuth.props" />
   <PropertyGroup>
@@ -21,6 +22,17 @@
   <ItemGroup>
     <Compile Include="Assumes.cs" />
     <Compile Include="Configuration\LoggingElement.cs" />
+    <Compile Include="Loggers\ColouredConsoleLogProvider.cs" />
+    <Compile Include="Loggers\EntLibLogProvider.cs" />
+    <Compile Include="Loggers\ILogProvider.cs" />
+    <Compile Include="Loggers\Log4NetLogProvider.cs" />
+    <Compile Include="Loggers\LogExtensions.cs" />
+    <Compile Include="Loggers\LoggerExecutionWrapper.cs" />
+    <Compile Include="Loggers\LogLevel.cs" />
+    <Compile Include="Loggers\LogProvider.cs" />
+    <Compile Include="Loggers\LoupeLogProvider.cs" />
+    <Compile Include="Loggers\NLogLogProvider.cs" />
+    <Compile Include="Loggers\SerilogLogProvider.cs" />
     <Compile Include="Messaging\Base64WebEncoder.cs" />
     <Compile Include="Messaging\Bindings\AsymmetricCryptoKeyStoreWrapper.cs" />
     <Compile Include="Messaging\Bindings\CryptoKey.cs" />
@@ -58,7 +70,6 @@
     <Compile Include="Messaging\KeyedCollectionDelegate.cs" />
     <Compile Include="Messaging\MultipartPostPart.cs" />
     <Compile Include="Messaging\NetworkDirectWebResponse.cs" />
-    <Compile Include="Messaging\OutgoingWebResponseActionResult.cs" />
     <Compile Include="Messaging\ProtocolFaultResponseException.cs" />
     <Compile Include="Messaging\Reflection\IMessagePartEncoder.cs" />
     <Compile Include="Messaging\Reflection\IMessagePartFormattingEncoder.cs" />
@@ -134,8 +145,6 @@
     <Compile Include="IEmbeddedResourceRetrieval.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Loggers\ILog.cs" />
-    <Compile Include="Loggers\NoOpLogger.cs" />
-    <Compile Include="Loggers\TraceLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Messaging\ReadOnlyDictionary.cs" />
     <Compile Include="Reporting.cs" />
@@ -145,7 +154,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="TinyIOC.cs" />
     <Compile Include="UriUtil.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
@@ -173,12 +181,16 @@
     <EmbeddedResource Include="Messaging\MessagingStrings.sr.resx" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <!-- Since MVC 2 and higher apps tend to use type forwarding,
          it's a more broadly consumable idea to bind against MVC 1 for the library -->
+    <Reference Include="CodeContracts">
+      <HintPath>..\..\packages\CodeContracts.1.0.5283.19363\lib\net40\CodeContracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xaml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(ProjectRoot)tools\DotNetOpenAuth.targets" />

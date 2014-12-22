@@ -11,6 +11,8 @@ namespace DotNetOpenAuth.OpenId.Extensions.AttributeExchange {
 	using System.Diagnostics.Contracts;
 	using System.Globalization;
 	using System.Linq;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId.Messages;
 

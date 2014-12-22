@@ -23,14 +23,14 @@ namespace DotNetOpenAuth.Messaging {
 	using System.Security;
 	using System.Security.Cryptography;
 	using System.Text;
-	using System.Threading;
 	using System.Web;
-	using System.Web.Mvc;
 	using System.Xml;
+
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging.Bindings;
 	using DotNetOpenAuth.Messaging.Reflection;
 
-	/// <summary>
+    /// <summary>
 	/// A grab-bag of utility methods useful for the channel stack of the protocol.
 	/// </summary>
 	[SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Utility class touches lots of surface area")]
@@ -155,16 +155,6 @@ namespace DotNetOpenAuth.Messaging {
 		/// </summary>
 		internal static Random NonCryptoRandomDataGenerator {
 			get { return ThreadSafeRandom.RandomNumberGenerator; }
-		}
-
-		/// <summary>
-		/// Transforms an OutgoingWebResponse to an MVC-friendly ActionResult.
-		/// </summary>
-		/// <param name="response">The response to send to the user agent.</param>
-		/// <returns>The <see cref="ActionResult"/> instance to be returned by the Controller's action method.</returns>
-		public static ActionResult AsActionResult(this OutgoingWebResponse response) {
-			Requires.NotNull(response, "response");
-			return new OutgoingWebResponseActionResult(response);
 		}
 
 #if CLR4

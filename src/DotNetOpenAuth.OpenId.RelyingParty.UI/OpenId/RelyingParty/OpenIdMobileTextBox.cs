@@ -18,6 +18,7 @@ namespace DotNetOpenAuth.OpenId.RelyingParty {
 	using System.Web.UI;
 	using System.Web.UI.MobileControls;
 	using DotNetOpenAuth.Configuration;
+	using DotNetOpenAuth.Loggers;
 	using DotNetOpenAuth.Messaging;
 	using DotNetOpenAuth.OpenId.Extensions.SimpleRegistration;
 
