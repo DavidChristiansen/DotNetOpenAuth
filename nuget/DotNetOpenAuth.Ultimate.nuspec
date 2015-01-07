@@ -4,12 +4,13 @@
 		<id>DotNetOpenAuth.Ultimate</id>
 		<version>$version$</version>
 		<title>DotNetOpenAuth (unified)</title>
-		<authors>Andrew Arnott</authors>
-		<owners>Outercurve Foundation</owners>
+		<authors>David Christiansen</authors>
+		<owners>DotNetOpenAuth</owners>
 		<projectUrl>http://www.dotnetopenauth.net/</projectUrl>
-		<iconUrl>https://github.com/AArnott/dotnetopenid/raw/v3.4/doc/logo/dnoa-logo_32x32.png</iconUrl>
+		<iconUrl>https://raw.githubusercontent.com/DotNetOpenAuth/DotNetOpenAuth/master/doc/logo/dnoa-logo_32x32.png</iconUrl>
 		<licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<releaseNotes>Please visit https://github.com/DotNetOpenAuth/DotNetOpenAuth/wiki/Release-Notes-$version$ to view the release notes.</releaseNotes>
 		<summary>OpenID, OAuth, &amp; InfoCard library for web and desktop applications.</summary>
 		<description>
 			A single assembly that adds OpenID 1.1/2.0, OAuth 1.0(a)/2.0, &amp; InfoCard authentication and authorization functionality for client and server applications.
@@ -18,17 +19,17 @@
 		<language>en-US</language>
 	</metadata>
 	<files>
-		<file src="$OutputPath35$unified\signed\DotNetOpenAuth.dll" target="lib\net35-full\" />
-		<file src="$OutputPath40$unified\signed\DotNetOpenAuth.dll" target="lib\net40-full\" />
-		<file src="$OutputPath45$unified\signed\DotNetOpenAuth.dll" target="lib\net45-full\" />
+		<file src="$OutputPath35$DotNetOpenAuth.dll" target="lib\net35-full\" />
+		<file src="$OutputPath40$DotNetOpenAuth.dll" target="lib\net40-full\" />
+		<file src="$OutputPath45$DotNetOpenAuth.dll" target="lib\net45-full\" />
 
-		<file src="$OutputPath35$unified\DotNetOpenAuth.pdb" target="lib\net35-full\" />
-		<file src="$OutputPath40$unified\DotNetOpenAuth.pdb" target="lib\net40-full\" />
-		<file src="$OutputPath45$unified\DotNetOpenAuth.pdb" target="lib\net45-full\" />
+		<file src="$OutputPath35$DotNetOpenAuth.pdb" target="lib\net35-full\" />
+		<file src="$OutputPath40$DotNetOpenAuth.pdb" target="lib\net40-full\" />
+		<file src="$OutputPath45$DotNetOpenAuth.pdb" target="lib\net45-full\" />
 
-		<file src="$OutputPath35$unified\DotNetOpenAuth.xml" target="lib\net35-full\" />
-		<file src="$OutputPath40$unified\DotNetOpenAuth.xml" target="lib\net40-full\" />
-		<file src="$OutputPath45$unified\DotNetOpenAuth.xml" target="lib\net45-full\" />
+		<file src="$OutputPath35$DotNetOpenAuth.xml" target="lib\net35-full\" />
+		<file src="$OutputPath40$DotNetOpenAuth.xml" target="lib\net40-full\" />
+		<file src="$OutputPath45$DotNetOpenAuth.xml" target="lib\net45-full\" />
 
 		<file src="content\Ultimate\net35-full\web.config.transform" target="content\net35-full\web.config.transform" />
 		<file src="content\Ultimate\net40-full\web.config.transform" target="content\net40-full\web.config.transform" />

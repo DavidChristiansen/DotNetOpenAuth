@@ -5,7 +5,7 @@
 		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
 		<TargetFrameworkVersion Condition=" '$(TargetFrameworkVersion)' == '' ">v4.0</TargetFrameworkVersion>
 		<DisableFastUpToDateCheck>false</DisableFastUpToDateCheck>
-		<DropsRoot>$(ProjectRoot)drops\$(TargetFrameworkVersion)\$(Configuration)\</DropsRoot>
+		<DropsRoot>$(ProjectRoot)drops\</DropsRoot>
 		<OutputPath>$(ProjectRoot)bin\$(TargetFrameworkVersion)\$(Configuration)\</OutputPath>
 		<OutputPath35>$(ProjectRoot)bin\v3.5\$(Configuration)\</OutputPath35>
 		<OutputPath40>$(ProjectRoot)bin\v4.0\$(Configuration)\</OutputPath40>
@@ -84,6 +84,9 @@
 										 DotNetOpenAuth.OAuth;
 										 DotNetOpenAuth.OAuth.Consumer;
 										 DotNetOpenAuth.OAuth.ServiceProvider;
+										 DotNetOpenAuth.InfoCard;
+										 DotNetOpenAuth.InfoCard.UI;
+										 DotNetOpenAuth.OpenIdInfoCard.UI;
 										 DotNetOpenAuth.OpenIdOAuth;
 										 " />
 		<ProductProjectNames Include="

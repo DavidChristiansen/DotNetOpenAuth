@@ -4,13 +4,14 @@
 	<Import Project="$(ProjectRoot)tools\Translation.targets"/>
 
 	<ItemGroup>
-		<!--Removed from NightlyProjects until it can be fixed up. samples\tools.proj;-->
+		<!--Removed from NightlyProjects until it can be fixed up. samples\tools.proj;	tools\drop.proj;-->
 		<NightlyProjects Include="
 										nuget\nuget.proj;
-										tools\drop.proj;
+									
 										 ">
 			<Properties>TargetFrameworkVersion=v4.0</Properties>
 		</NightlyProjects>
+		<!--
 		<NightlyProjects Include="samples\samples.proj">
 			<Targets>DeployableArchive</Targets>
 			<Properties>TargetFrameworkVersion=v4.0</Properties>
@@ -19,6 +20,7 @@
 			<Targets>DeployableArchive</Targets>
 			<Properties>TargetFrameworkVersion=v3.5</Properties>
 		</NightlyProjects>
+		-->
 
 		<ProjectsToClean Include="
 		                          $(SolutionPath);

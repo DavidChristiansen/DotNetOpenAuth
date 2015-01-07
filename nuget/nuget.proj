@@ -65,7 +65,10 @@
 		</PropertyGroup>
 	</Target>
 
-	<Target Name="Build" DependsOnTargets="BuildIntermediates" Returns="@(NuGetPackages)">
+<!--
+	<Target Name="Build" Returns="@(NuGetPackages)">
+-->
+	<Target Name="Build" DependsOnTargets="BuildIntermediates" Returns="@(NuGetPackages)"> 
 		<ItemGroup>
 			<NuGetProperties Include="version=$(NuGetPackageVersion)" />
 			<NuGetProperties Include="oauth2version=$(NuGetPackageVersion)" />
@@ -76,7 +79,7 @@
 			<NuGetProperties Include="IntermediatePath45=$(IntermediatePath45)" />
 			<NuGetProperties Include="signedSubPath=$(SignedSubPath)" />
 
-			<NuGetSpecifications Include="*.nuspec" Exclude="DotNetOpenAuth.nuspec">
+			<NuGetSpecifications Include="*.nuspec" Exclude="DotNetOpenAuth.nuspec;DotNetOpenAuth.Ultimate.nuspec">
 				<Symbols>true</Symbols>
 				<PackageVersion>$(NuGetPackageVersion)</PackageVersion>
 			</NuGetSpecifications>
@@ -94,7 +97,7 @@
 				<Properties>$(_NuGetProperties);Identity=%(FileName);GeneratedAssemblyInfoSourceFile=$(IntermediatePath40)%(FileName).Version.cs;GeneratedAssemblyInfoSourceFile45=$(IntermediatePath45)%(FileName).Version.cs</Properties>
 			</NuGetSpecifications>
 		</ItemGroup>
-
+		<Message Importance="High" Text="Packaging Nuget package %(NuGetSpecifications.Identity)" />
 		<NuGetPack
 			NuSpec="%(NuGetSpecifications.Identity)"
 			OutputPackageDirectory="$(DropsRoot)"
