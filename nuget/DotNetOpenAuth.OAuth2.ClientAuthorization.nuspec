@@ -9,6 +9,7 @@
 		<projectUrl>http://www.dotnetopenauth.net/</projectUrl>
 		<iconUrl>https://github.com/AArnott/dotnetopenid/raw/v3.4/doc/logo/dnoa-logo_32x32.png</iconUrl>
 		<licenseUrl>http://www.opensource.org/licenses/ms-pl.html</licenseUrl>
+		<releaseNotes>Please visit https://github.com/DotNetOpenAuth/DotNetOpenAuth/wiki/Release-Notes-$version$ to view the release notes.</releaseNotes>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>Functionality common to both OAuth 2.0 Clients and Authorization Servers.</description>
 		<dependencies>

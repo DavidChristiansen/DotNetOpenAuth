@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTarget="Build">
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTarget="Build" ToolsVersion="4.0">
 	<PropertyGroup>
 		<PresentationStyle Condition="'$(PresentationStyle)' == ''">vs2005</PresentationStyle>
 		<!-- Environment -->
